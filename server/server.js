@@ -36,7 +36,7 @@ var _ = require('underscore'),
 // -----------------------------------------------------------------------------
 // Web Server Setup
 // -----------------------------------------------------------------------------
-
+app.set('port', (process.env.PORT || 5000));
 // Add middleware to parse the POST data of the body
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -46,8 +46,10 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/app'));
 
 // Start listening on port 8080
-server.listen(5000);
-console.log('Listening on port 5000');
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
+
 
 // -----------------------------------------------------------------------------
 // Socket.io Setup
