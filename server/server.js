@@ -46,8 +46,8 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/app'));
 
 // Start listening on port 8080
-server.listen(8080);
-console.log('Listening on port 8080');
+server.listen(5000);
+console.log('Listening on port 5000');
 
 // -----------------------------------------------------------------------------
 // Socket.io Setup
