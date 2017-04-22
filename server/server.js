@@ -32,6 +32,8 @@ var _ = require('underscore'),
     instrumentRepository = require('./InstrumentRepository.js'),
     orderRepository = require('./OrderRepository.js'),
     bodyParser = require('body-parser');
+var http = require("http");
+var port = process.env.PORT || 5000;
 
 // -----------------------------------------------------------------------------
 // Web Server Setup
@@ -46,9 +48,12 @@ app.use(bodyParser.json());
 app.use('/', express.static(__dirname + '/app'));
 
 // Start listening on port 8080
-app.listen(app.get('port'), function() {
-  console.log('Node app is running on port', app.get('port'));
-});
+//app.listen(app.get('port'), function() {
+ // console.log('Node app is running on port', app.get('port'));
+//});
+
+var server = http.createServer(app);
+server.listen(port);
 
 
 // -----------------------------------------------------------------------------
