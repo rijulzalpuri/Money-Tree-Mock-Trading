@@ -38,7 +38,7 @@ var port = process.env.PORT || 5000;
 // -----------------------------------------------------------------------------
 // Web Server Setup
 // -----------------------------------------------------------------------------
-app.set('port', (process.env.PORT || 5000));
+//app.set('port', (process.env.PORT || 5000));
 // Add middleware to parse the POST data of the body
 app.use(bodyParser.urlencoded({ extended: true }));
 
